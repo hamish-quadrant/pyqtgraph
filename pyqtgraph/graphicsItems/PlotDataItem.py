@@ -725,8 +725,8 @@ class PlotDataItem(GraphicsObject):
                     x = np.array([d.get('x',None) for d in data])
                 if 'y' in data[0]:
                     y = np.array([d.get('y',None) for d in data])
-                for k in ['data', 'symbolSize', 'symbolPen', 'symbolBrush', 'symbolShape']:
-                    if k in data:
+                for k in ['data', 'symbolSize', 'symbolPen', 'symbolBrush', 'symbol']:
+                    if k in data[0]:
                         kargs[k] = [d.get(k, None) for d in data]
             elif dt == 'MetaArray':
                 y = data.view(np.ndarray)
